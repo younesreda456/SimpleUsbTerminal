@@ -14,7 +14,8 @@ class CustomProber {
 
     static UsbSerialProber getCustomProber() {
         ProbeTable customTable = new ProbeTable();
-        customTable.addProduct(0x16d0, 0x087e, CdcAcmSerialDriver.class); // e.g. Digispark CDC
+	// Add VID and PID of your device here. Also specify desired driver
+        customTable.addProduct(0x0483, 0x5740, CdcAcmSerialDriver.class); // Register STM32H757 Eval Board
         return new UsbSerialProber(customTable);
     }
 
